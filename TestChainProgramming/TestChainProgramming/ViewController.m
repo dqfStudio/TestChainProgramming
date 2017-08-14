@@ -40,6 +40,11 @@
 
     NSLog(@"%@",NSMutableString.add(@"hello").add(@",world"));
     NSLog(@"%@",NSMutableString.add(@"hello").add(@(111)));
+    
+    
+    NSString *str = @"123".replace(@"1",@"2");
+    NSLog(@"%@",str);
+    
 }
 
 

@@ -13,4 +13,15 @@
 + (NSString *(^)(id))add;
 - (NSString *(^)(id))add;
 
+- (NSString *(^)(NSString *, NSString *))replace;
+
++ (NSString *(^)(NSUInteger))space;
+- (NSString *(^)(NSUInteger))space;
+
++ (NSString *(^)(NSUInteger))tab;
+- (NSString *(^)(NSUInteger))tab;
+
++ (NSString *(^)(NSUInteger))wrap;
+- (NSString *(^)(NSUInteger))wrap;
+
 @end
