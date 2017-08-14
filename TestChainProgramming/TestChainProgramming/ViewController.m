@@ -45,6 +45,10 @@
     NSString *str = @"123".replace(@"1",@"2");
     NSLog(@"%@",str);
     
+    
+    NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@"111"];
+    NSLog(@"%@",mutableStr.wrap(2).add(@"hello"));
+    
 }
 
 

@@ -15,12 +15,7 @@
 
 + (NSString *(^)(id))add {
     return ^NSString *(id obj) {
-        NSString *selfStr = [NSString stringWithFormat:@"%@", self];
-        if ([selfStr isEqualToString:@"NSString"] || [selfStr isEqualToString:@"NSMutableString"]) {
-            return [NSString stringWithFormat:@"%@",obj];
-        }else {
-            return [NSString stringWithFormat:@"%@%@", selfStr,obj];
-        }
+        return [NSString stringWithFormat:@"%@",obj];
     };
 }
 
@@ -39,106 +34,56 @@
 //空格
 + (NSString *(^)(NSUInteger))space {
     return ^NSString *(NSUInteger count) {
-        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@""];
-        if (count >=KMinValue && count <=KMaxValue) {
-            NSString *str = @" ";
-            for (int i=0; i<count; i++) {
-                [mutableStr appendString:str];
-            }
-        }
-        return mutableStr;
+        return [self appendString:@" " count:count];
     };
 }
 
 - (NSString *(^)(NSUInteger))space {
     return ^NSString *(NSUInteger count) {
-        NSMutableString *mutableStr = nil;
-        NSString *selfStr = NSStringFromClass([self class]);
-        
-        if ([selfStr isEqualToString:@"NSMutableString"]) {
-            mutableStr = (NSMutableString *)self;
-        }else {
-            mutableStr = [[NSMutableString alloc] initWithString:self];
-        }
-        
-        if (count >=KMinValue && count <=KMaxValue) {
-            NSString *str = @" ";
-            for (int i=0; i<count; i++) {
-                [mutableStr appendString:str];
-            }
-        }
-        return mutableStr;
+        return [self appendString:@" " count:count];
     };
 }
 
 //tab
 + (NSString *(^)(NSUInteger))tab {
     return ^NSString *(NSUInteger count) {
-        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@""];
-        if (count >=KMinValue && count <=KMaxValue) {
-            NSString *str = @"\t";
-            for (int i=0; i<count; i++) {
-                [mutableStr appendString:str];
-            }
-        }
-        return mutableStr;
+        return [self appendString:@"\t" count:count];
     };
 }
 
 - (NSString *(^)(NSUInteger))tab {
     return ^NSString *(NSUInteger count) {
-        NSMutableString *mutableStr = nil;
-        NSString *selfStr = NSStringFromClass([self class]);
-        
-        if ([selfStr isEqualToString:@"NSMutableString"]) {
-            mutableStr = (NSMutableString *)self;
-        }else {
-            mutableStr = [[NSMutableString alloc] initWithString:self];
-        }
-        
-        if (count >=KMinValue && count <=KMaxValue) {
-            NSString *str = @"\t";
-            for (int i=0; i<count; i++) {
-                [mutableStr appendString:str];
-            }
-        }
-        return mutableStr;
+        return [self appendString:@"\t" count:count];
     };
 }
 
 //换行
 + (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
-        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@""];
-        if (count >=KMinValue && count <=KMaxValue) {
-            NSString *str = @"\n";
-            for (int i=0; i<count; i++) {
-                [mutableStr appendString:str];
-            }
-        }
-        return mutableStr;
+        return [self appendString:@"\n" count:count];
     };
 }
 
 - (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
-        NSMutableString *mutableStr = nil;
-        NSString *selfStr = NSStringFromClass([self class]);
-        
-        if ([selfStr isEqualToString:@"NSMutableString"]) {
-            mutableStr = (NSMutableString *)self;
-        }else {
-            mutableStr = [[NSMutableString alloc] initWithString:self];
-        }
-        
-        if (count >=KMinValue && count <=KMaxValue) {
-            NSString *str = @"\n";
-            for (int i=0; i<count; i++) {
-                [mutableStr appendString:str];
-            }
-        }
-        return mutableStr;
+        return [self appendString:@"\n" count:count];
     };
+}
+
++ (NSString *)appendString:(NSString *)aString count:(NSUInteger)count {
+    NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@""];
+    for (int i=0; i<count; i++) {
+        [mutableStr appendString:aString];
+    }
+    return mutableStr;
+}
+
+- (NSString *)appendString:(NSString *)aString count:(NSUInteger)count {
+    NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:self];
+    for (int i=0; i<count; i++) {
+        [mutableStr appendString:aString];
+    }
+    return mutableStr;
 }
 
 @end
