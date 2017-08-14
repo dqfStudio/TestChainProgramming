@@ -10,8 +10,11 @@
 
 @interface NSString (Util)
 
-+ (NSString *(^)(id))add;
-- (NSString *(^)(id))add;
++ (NSString *(^)(id))append;
+- (NSString *(^)(id))append;
+
++ (NSString *(^)(NSString *, NSUInteger))appendString;
+- (NSString *(^)(NSString *, NSUInteger))appendString;
 
 - (NSString *(^)(NSString *, NSString *))replace;
 
@@ -23,8 +26,5 @@
 
 + (NSString *(^)(NSUInteger))wrap;
 - (NSString *(^)(NSUInteger))wrap;
-
-+ (NSString *(^)(NSString *, NSUInteger))appendString;
-- (NSString *(^)(NSString *, NSUInteger))appendString;
 
 @end

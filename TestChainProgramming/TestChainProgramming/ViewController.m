@@ -34,12 +34,12 @@
     
     
     //例子二
-    NSLog(@"%@",NSString.add(@"hello").add(@",world"));
-    NSLog(@"%@",NSString.add(@"hello").add(@(111)));
+    NSLog(@"%@",NSString.append(@"hello").append(@",world"));
+    NSLog(@"%@",NSString.append(@"hello").append(@(111)));
     
 
-    NSLog(@"%@",NSMutableString.add(@"hello").add(@",world"));
-    NSLog(@"%@",NSMutableString.add(@"hello").add(@(111)));
+    NSLog(@"%@",NSMutableString.append(@"hello").append(@",world"));
+    NSLog(@"%@",NSMutableString.append(@"hello").append(@(111)));
     
     
     NSString *str = @"123".replace(@"1",@"2");
@@ -47,7 +47,7 @@
     
     
     NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@"111"];
-    NSLog(@"%@",mutableStr.wrap(2).add(@"hello"));
+    NSLog(@"%@",mutableStr.wrap(2).append(@"hello"));
     
 }
 

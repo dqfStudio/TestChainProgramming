@@ -10,15 +10,35 @@
 
 @implementation NSString (Util)
 
-+ (NSString *(^)(id))add {
++ (NSString *(^)(id))append {
     return ^NSString *(id obj) {
         return [NSString stringWithFormat:@"%@",obj];
     };
 }
 
-- (NSString *(^)(id))add {
+- (NSString *(^)(id))append {
     return ^NSString *(id obj) {
         return [NSString stringWithFormat:@"%@%@", self,obj];
+    };
+}
+
++ (NSString *(^)(NSString *, NSUInteger))appendString {
+    return ^NSString *(NSString *org, NSUInteger count) {
+        NSMutableString *mutableStr = [[NSMutableString alloc] init];
+        for (int i=0; i<count; i++) {
+            [mutableStr appendString:org];
+        }
+        return mutableStr;
+    };
+}
+
+- (NSString *(^)(NSString *, NSUInteger))appendString {
+    return ^NSString *(NSString *org, NSUInteger count) {
+        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:self];
+        for (int i=0; i<count; i++) {
+            [mutableStr appendString:org];
+        }
+        return mutableStr;
     };
 }
 
@@ -64,27 +84,6 @@
 - (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
         return self.appendString(@"\n", count);
-    };
-}
-
-
-+ (NSString *(^)(NSString *, NSUInteger))appendString {
-    return ^NSString *(NSString *org, NSUInteger count) {
-        NSMutableString *mutableStr = [[NSMutableString alloc] init];
-        for (int i=0; i<count; i++) {
-            [mutableStr appendString:org];
-        }
-        return mutableStr;
-    };
-}
-
-- (NSString *(^)(NSString *, NSUInteger))appendString {
-    return ^NSString *(NSString *org, NSUInteger count) {
-        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:self];
-        for (int i=0; i<count; i++) {
-            [mutableStr appendString:org];
-        }
-        return mutableStr;
     };
 }
 
