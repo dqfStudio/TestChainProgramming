@@ -70,7 +70,7 @@
 
 + (NSString *(^)(NSString *, NSUInteger))appendString {
     return ^NSString *(NSString *org, NSUInteger count) {
-        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@""];
+        NSMutableString *mutableStr = [[NSMutableString alloc] init];
         for (int i=0; i<count; i++) {
             [mutableStr appendString:org];
         }
