@@ -24,7 +24,7 @@
 + (NSString *(^)(NSUInteger))wrap;
 - (NSString *(^)(NSUInteger))wrap;
 
-+ (NSString *)appendString:(NSString *)aString count:(NSUInteger)count;
-- (NSString *)appendString:(NSString *)aString count:(NSUInteger)count;
++ (NSString *(^)(NSString *, NSUInteger))appendString;
+- (NSString *(^)(NSString *, NSUInteger))appendString;
 
 @end

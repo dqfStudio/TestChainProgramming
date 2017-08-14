@@ -8,9 +8,6 @@
 
 #import "NSStringUtil.h"
 
-#define KMinValue     0
-#define KMaxValue     100
-
 @implementation NSString (Util)
 
 + (NSString *(^)(id))add {
@@ -26,7 +23,7 @@
 }
 
 - (NSString *(^)(NSString *, NSString *))replace {
-    return ^NSString *(NSString *org1,NSString *org2) {
+    return ^NSString *(NSString *org1, NSString *org2) {
         return [self stringByReplacingOccurrencesOfString:org1 withString:org2];
     };
 }
@@ -34,56 +31,61 @@
 //空格
 + (NSString *(^)(NSUInteger))space {
     return ^NSString *(NSUInteger count) {
-        return [self appendString:@" " count:count];
+        return self.appendString(@" ", count);
     };
 }
 
 - (NSString *(^)(NSUInteger))space {
     return ^NSString *(NSUInteger count) {
-        return [self appendString:@" " count:count];
+        return self.appendString(@" ", count);
     };
 }
 
 //tab
 + (NSString *(^)(NSUInteger))tab {
     return ^NSString *(NSUInteger count) {
-        return [self appendString:@"\t" count:count];
+        return self.appendString(@"\t", count);
     };
 }
 
 - (NSString *(^)(NSUInteger))tab {
     return ^NSString *(NSUInteger count) {
-        return [self appendString:@"\t" count:count];
+        return self.appendString(@"\t", count);
     };
 }
 
 //换行
 + (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
-        return [self appendString:@"\n" count:count];
+        return self.appendString(@"\n", count);
     };
 }
 
 - (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
-        return [self appendString:@"\n" count:count];
+        return self.appendString(@"\n", count);
     };
 }
 
-+ (NSString *)appendString:(NSString *)aString count:(NSUInteger)count {
-    NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@""];
-    for (int i=0; i<count; i++) {
-        [mutableStr appendString:aString];
-    }
-    return mutableStr;
+
++ (NSString *(^)(NSString *, NSUInteger))appendString {
+    return ^NSString *(NSString *org, NSUInteger count) {
+        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@""];
+        for (int i=0; i<count; i++) {
+            [mutableStr appendString:org];
+        }
+        return mutableStr;
+    };
 }
 
-- (NSString *)appendString:(NSString *)aString count:(NSUInteger)count {
-    NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:self];
-    for (int i=0; i<count; i++) {
-        [mutableStr appendString:aString];
-    }
-    return mutableStr;
+- (NSString *(^)(NSString *, NSUInteger))appendString {
+    return ^NSString *(NSString *org, NSUInteger count) {
+        NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:self];
+        for (int i=0; i<count; i++) {
+            [mutableStr appendString:org];
+        }
+        return mutableStr;
+    };
 }
 
 @end
