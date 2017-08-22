@@ -48,7 +48,10 @@
     
     NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:@"111"];
     NSLog(@"%@",mutableStr.wrap(2).append(@"hello"));
+ 
     
+    mutableStr.subStringToStart(@"111").subStringToStart(@">").subStringFromEnd(@"<");
+    mutableStr.subStringToEnd(@"111");
 }
 
 

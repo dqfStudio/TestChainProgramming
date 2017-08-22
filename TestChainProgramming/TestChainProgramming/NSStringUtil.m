@@ -87,4 +87,32 @@
     };
 }
 
+- (NSString *(^)(NSString *))subStringToStart {
+    return ^NSString *(NSString * aString) {
+        NSRange range = [self rangeOfString:aString];
+        return [self substringToIndex:range.location];
+    };
+}
+
+- (NSString *(^)(NSString *))subStringToEnd {
+    return ^NSString *(NSString * aString) {
+        NSRange range = [self rangeOfString:aString];
+        return [self substringToIndex:range.location+range.length];
+    };
+}
+
+- (NSString *(^)(NSString *))subStringFromStart {
+    return ^NSString *(NSString * aString) {
+        NSRange range = [self rangeOfString:aString];
+        return [self substringFromIndex:range.location];
+    };
+}
+
+- (NSString *(^)(NSString *))subStringFromEnd {
+    return ^NSString *(NSString * aString) {
+        NSRange range = [self rangeOfString:aString];
+        return [self substringFromIndex:range.location+range.length];
+    };
+}
+
 @end

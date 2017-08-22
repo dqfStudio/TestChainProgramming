@@ -27,4 +27,10 @@
 + (NSString *(^)(NSUInteger))wrap;
 - (NSString *(^)(NSUInteger))wrap;
 
+- (NSString *(^)(NSString *))subStringToStart;
+- (NSString *(^)(NSString *))subStringToEnd;
+
+- (NSString *(^)(NSString *))subStringFromStart;
+- (NSString *(^)(NSString *))subStringFromEnd;
+
 @end
