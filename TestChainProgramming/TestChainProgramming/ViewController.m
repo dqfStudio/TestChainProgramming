@@ -51,6 +51,13 @@
  
     
     mutableStr.subStringToStart(@"111").subStringToStart(@">").subStringFromEnd(@"<");
+    
+    mutableStr
+    .subStringToStart(@"111")
+    .subStringToStart(@">")
+    .subStringFromEnd(@"<");
+    
+    
     mutableStr.subStringToEnd(@"111");
 }
 
