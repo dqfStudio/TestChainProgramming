@@ -13,8 +13,8 @@
 + (NSString *(^)(id))append;
 - (NSString *(^)(id))append;
 
-+ (NSString *(^)(NSString *, NSUInteger))appendString;
-- (NSString *(^)(NSString *, NSUInteger))appendString;
++ (NSString *(^)(NSString *, NSUInteger))appendCount;
+- (NSString *(^)(NSString *, NSUInteger))appendCount;
 
 - (NSString *(^)(NSString *, NSString *))replace;
 

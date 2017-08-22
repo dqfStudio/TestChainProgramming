@@ -22,7 +22,7 @@
     };
 }
 
-+ (NSString *(^)(NSString *, NSUInteger))appendString {
++ (NSString *(^)(NSString *, NSUInteger))appendCount {
     return ^NSString *(NSString *org, NSUInteger count) {
         NSMutableString *mutableStr = [[NSMutableString alloc] init];
         for (int i=0; i<count; i++) {
@@ -32,7 +32,7 @@
     };
 }
 
-- (NSString *(^)(NSString *, NSUInteger))appendString {
+- (NSString *(^)(NSString *, NSUInteger))appendCount {
     return ^NSString *(NSString *org, NSUInteger count) {
         NSMutableString *mutableStr = [[NSMutableString alloc] initWithString:self];
         for (int i=0; i<count; i++) {
@@ -51,39 +51,39 @@
 //空格
 + (NSString *(^)(NSUInteger))space {
     return ^NSString *(NSUInteger count) {
-        return self.appendString(@" ", count);
+        return self.appendCount(@" ", count);
     };
 }
 
 - (NSString *(^)(NSUInteger))space {
     return ^NSString *(NSUInteger count) {
-        return self.appendString(@" ", count);
+        return self.appendCount(@" ", count);
     };
 }
 
 //tab
 + (NSString *(^)(NSUInteger))tab {
     return ^NSString *(NSUInteger count) {
-        return self.appendString(@"\t", count);
+        return self.appendCount(@"\t", count);
     };
 }
 
 - (NSString *(^)(NSUInteger))tab {
     return ^NSString *(NSUInteger count) {
-        return self.appendString(@"\t", count);
+        return self.appendCount(@"\t", count);
     };
 }
 
 //换行
 + (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
-        return self.appendString(@"\n", count);
+        return self.appendCount(@"\n", count);
     };
 }
 
 - (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
-        return self.appendString(@"\n", count);
+        return self.appendCount(@"\n", count);
     };
 }
 
