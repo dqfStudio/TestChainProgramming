@@ -50,17 +50,38 @@
     NSLog(@"%@",mutableStr.wrap(2).append(@"hello"));
  
     
-    mutableStr.subStringToStart(@"111").subStringToStart(@">").subStringFromEnd(@"<");
+//    mutableStr.subStringToStart(@"111").subStringToStart(@">").subStringFromEnd(@"<");
+//    
+//    mutableStr
+//    .subStringToStart(@"111")
+//    .subStringToStart(@">")
+//    .subStringFromEnd(@"<");
+//    
+//    
+//    mutableStr.subStringToEnd(@"111");
     
-    mutableStr
-    .subStringToStart(@"111")
-    .subStringToStart(@">")
-    .subStringFromEnd(@"<");
-    
-    
-    mutableStr.subStringToEnd(@"111");
+    [self sfs];
 }
 
+- (void)sfs {
+    NSString *str = @"A~B^QC~QE";
+    
+    NSLog(@"%@", str.componentsByStringBySetString(@"^Q", @"~"));
+    NSLog(@"%@", str.componentsBySetString(@"^Q~"));
+    
+    NSLog(@"%@", str.componentsByString(@"~B"));
+    NSLog(@"%@", str.componentsBySetString(@"~B"));
+    
+    NSLog(@"%@", str.componentsBySetString(@"&"));
+    NSLog(@"%@", str.componentsBySetString(@"~"));
+    NSLog(@"%@", str.componentsBySetString(@"^~"));
+    NSLog(@"%@", str.componentsBySetString(@"QC"));
+    
+    NSLog(@"%@", str.componentsBySetString(@"&"));
+    NSLog(@"%@", str.componentsBySetString(@"~"));
+    NSLog(@"%@", str.componentsBySetString(@"^~"));
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

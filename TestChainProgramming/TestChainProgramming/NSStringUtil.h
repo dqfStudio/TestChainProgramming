@@ -33,4 +33,8 @@
 - (NSString *(^)(NSString *))subStringFromStart;
 - (NSString *(^)(NSString *))subStringFromEnd;
 
+- (NSArray<NSString *> *(^)(NSString *))componentsByString;
+- (NSArray<NSString *> *(^)(NSString *))componentsBySetString;
+- (NSArray<NSString *> *(^)(NSString *, NSString *))componentsByStringBySetString;
+
 @end

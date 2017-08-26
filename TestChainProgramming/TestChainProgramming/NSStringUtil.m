@@ -88,30 +88,65 @@
 }
 
 - (NSString *(^)(NSString *))subStringToStart {
-    return ^NSString *(NSString * aString) {
+    return ^NSString *(NSString *aString) {
         NSRange range = [self rangeOfString:aString];
         return [self substringToIndex:range.location];
     };
 }
 
 - (NSString *(^)(NSString *))subStringToEnd {
-    return ^NSString *(NSString * aString) {
+    return ^NSString *(NSString *aString) {
         NSRange range = [self rangeOfString:aString];
         return [self substringToIndex:range.location+range.length];
     };
 }
 
 - (NSString *(^)(NSString *))subStringFromStart {
-    return ^NSString *(NSString * aString) {
+    return ^NSString *(NSString *aString) {
         NSRange range = [self rangeOfString:aString];
         return [self substringFromIndex:range.location];
     };
 }
 
 - (NSString *(^)(NSString *))subStringFromEnd {
-    return ^NSString *(NSString * aString) {
+    return ^NSString *(NSString *aString) {
         NSRange range = [self rangeOfString:aString];
         return [self substringFromIndex:range.location+range.length];
+    };
+}
+
+- (NSArray<NSString *> *(^)(NSString *))componentsByString {
+    return ^NSArray<NSString *> *(NSString *separator) {
+        return [self componentsSeparatedByString:separator];
+    };
+}
+
+- (NSArray<NSString *> *(^)(NSString *))componentsBySetString {
+    return ^NSArray<NSString *> *(NSString *separator) {
+        NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:separator];
+        NSArray *arr = [self componentsSeparatedByCharactersInSet:characterSet];
+        NSMutableArray *mutablerArr = [NSMutableArray new];
+        //过滤掉为空的字符串
+        for (int i=0; i<arr.count; i++) {
+            NSString *str = arr[i];
+            if (str.length > 0) {
+                [mutablerArr addObject:str];
+            }
+        }
+        return mutablerArr;
+    };
+}
+
+- (NSArray<NSString *> *(^)(NSString *, NSString *))componentsByStringBySetString {
+    return ^NSArray<NSString *> *(NSString *separator, NSString *setSeparator) {
+        NSMutableArray *mutablerArr = [NSMutableArray new];
+        NSArray *arr = self.componentsByString(separator);
+        for (int i=0; i<arr.count; i++) {
+            NSString *str = arr[i];
+            NSArray *tmpArr = str.componentsBySetString(setSeparator);
+            [mutablerArr addObjectsFromArray:tmpArr];
+        }
+        return mutablerArr;
     };
 }
 
