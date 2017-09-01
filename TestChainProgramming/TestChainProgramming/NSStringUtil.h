@@ -37,4 +37,7 @@
 - (NSArray<NSString *> *(^)(NSString *))componentsBySetString;
 - (NSArray<NSString *> *(^)(NSString *, NSString *))componentsByStringBySetString;
 
+- (BOOL(^)(NSString *))containsString;
+- (BOOL(^)(NSArray<NSString *> *))containsStrArr;
+
 @end
