@@ -124,13 +124,18 @@
 - (NSArray<NSString *> *(^)(NSString *))componentsBySetString {
     return ^NSArray<NSString *> *(NSString *separator) {
         NSCharacterSet *characterSet = [NSCharacterSet characterSetWithCharactersInString:separator];
+        NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
         NSArray *arr = [self componentsSeparatedByCharactersInSet:characterSet];
         NSMutableArray *mutablerArr = [NSMutableArray new];
         //过滤掉为空的字符串
         for (int i=0; i<arr.count; i++) {
             NSString *str = arr[i];
             if (str.length > 0) {
-                [mutablerArr addObject:str];
+                //过滤掉字符串两端为空的字符
+                NSString *trimStr = [str stringByTrimmingCharactersInSet:charSet];
+                if (trimStr.length > 0) {
+                    [mutablerArr addObject:trimStr];
+                }
             }
         }
         return mutablerArr;
