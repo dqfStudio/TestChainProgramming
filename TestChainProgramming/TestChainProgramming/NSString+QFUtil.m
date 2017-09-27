@@ -6,9 +6,9 @@
 //  Copyright © 2017年 dqfStudio. All rights reserved.
 //
 
-#import "NSStringUtil.h"
+#import "NSString+QFUtil.h"
 
-@implementation NSString (Util)
+@implementation NSString (QFUtil)
 
 + (NSString *(^)(id))append {
     return ^NSString *(id obj) {
@@ -84,6 +84,18 @@
 - (NSString *(^)(NSUInteger))wrap {
     return ^NSString *(NSUInteger count) {
         return self.appendCount(@"\n", count);
+    };
+}
+
+- (NSString *(^)(NSUInteger))substringToIndex {
+    return ^NSString *(NSUInteger to) {
+        return [self substringToIndex:to];
+    };
+}
+
+- (NSString *(^)(NSUInteger))substringFromIndex {
+    return ^NSString *(NSUInteger from) {
+        return [self substringFromIndex:from];
     };
 }
 

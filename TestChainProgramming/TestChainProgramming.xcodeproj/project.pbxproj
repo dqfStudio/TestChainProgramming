@@ -15,7 +15,7 @@
 		15FFF2D61F3C300C0031FB37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15FFF2D41F3C300C0031FB37 /* LaunchScreen.storyboard */; };
 		15FFF2E31F3C30450031FB37 /* CaculatorMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FFF2DE1F3C30440031FB37 /* CaculatorMaker.m */; };
 		15FFF2E41F3C30450031FB37 /* NSObject+Caculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FFF2E01F3C30440031FB37 /* NSObject+Caculator.m */; };
-		15FFF2E51F3C30450031FB37 /* NSStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FFF2E21F3C30450031FB37 /* NSStringUtil.m */; };
+		15FFF2E51F3C30450031FB37 /* NSString+QFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FFF2E21F3C30450031FB37 /* NSString+QFUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,8 @@
 		15FFF2DE1F3C30440031FB37 /* CaculatorMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaculatorMaker.m; sourceTree = "<group>"; };
 		15FFF2DF1F3C30440031FB37 /* NSObject+Caculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Caculator.h"; sourceTree = "<group>"; };
 		15FFF2E01F3C30440031FB37 /* NSObject+Caculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Caculator.m"; sourceTree = "<group>"; };
-		15FFF2E11F3C30450031FB37 /* NSStringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringUtil.h; sourceTree = "<group>"; };
-		15FFF2E21F3C30450031FB37 /* NSStringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringUtil.m; sourceTree = "<group>"; };
+		15FFF2E11F3C30450031FB37 /* NSString+QFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QFUtil.h"; sourceTree = "<group>"; };
+		15FFF2E21F3C30450031FB37 /* NSString+QFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QFUtil.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 				15FFF2DE1F3C30440031FB37 /* CaculatorMaker.m */,
 				15FFF2DF1F3C30440031FB37 /* NSObject+Caculator.h */,
 				15FFF2E01F3C30440031FB37 /* NSObject+Caculator.m */,
-				15FFF2E11F3C30450031FB37 /* NSStringUtil.h */,
-				15FFF2E21F3C30450031FB37 /* NSStringUtil.m */,
+				15FFF2E11F3C30450031FB37 /* NSString+QFUtil.h */,
+				15FFF2E21F3C30450031FB37 /* NSString+QFUtil.m */,
 				15FFF2C91F3C300C0031FB37 /* AppDelegate.h */,
 				15FFF2CA1F3C300C0031FB37 /* AppDelegate.m */,
 				15FFF2CC1F3C300C0031FB37 /* ViewController.h */,
@@ -169,7 +169,7 @@
 				15FFF2CE1F3C300C0031FB37 /* ViewController.m in Sources */,
 				15FFF2E31F3C30450031FB37 /* CaculatorMaker.m in Sources */,
 				15FFF2CB1F3C300C0031FB37 /* AppDelegate.m in Sources */,
-				15FFF2E51F3C30450031FB37 /* NSStringUtil.m in Sources */,
+				15FFF2E51F3C30450031FB37 /* NSString+QFUtil.m in Sources */,
 				15FFF2C81F3C300C0031FB37 /* main.m in Sources */,
 				15FFF2E41F3C30450031FB37 /* NSObject+Caculator.m in Sources */,
 			);
@@ -330,6 +330,7 @@
 				15FFF2DC1F3C300C0031FB37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

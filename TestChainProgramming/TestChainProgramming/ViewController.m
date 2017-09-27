@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "CaculatorMaker.h"
-#import "NSStringUtil.h"
+#import "NSString+QFUtil.h"
 
 @interface ViewController ()
 

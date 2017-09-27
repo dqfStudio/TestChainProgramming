@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (Util)
+@interface NSString (QFUtil)
 
 + (NSString *(^)(id))append;
 - (NSString *(^)(id))append;
@@ -26,6 +26,9 @@
 
 + (NSString *(^)(NSUInteger))wrap;
 - (NSString *(^)(NSUInteger))wrap;
+
+- (NSString *(^)(NSUInteger))substringToIndex;
+- (NSString *(^)(NSUInteger))substringFromIndex;
 
 - (NSString *(^)(NSString *))subStringToStart;
 - (NSString *(^)(NSString *))subStringToEnd;
